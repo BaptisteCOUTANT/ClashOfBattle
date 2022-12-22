@@ -45,7 +45,7 @@
         </TextView>
 
         <TextView
-            android:id="@+id/ville"
+            android:id="@+id/test1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
