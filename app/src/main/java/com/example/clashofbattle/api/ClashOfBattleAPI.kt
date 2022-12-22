@@ -18,7 +18,6 @@ interface ClashOfBattleAPI {
 
         private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
-        .add(CapabilityMoshiConverter())
         .build()
 
         private val retrofit = Retrofit.Builder()
@@ -29,9 +28,9 @@ interface ClashOfBattleAPI {
         val service: ClashOfBattleAPI by lazy { retrofit.create(ClashOfBattleAPI::class.java) }
     }
     @GET("players.json")
-    fun getAlls():Map<String, Player>
+    suspend fun getAlls():Map<String, Player>
 
     @PUT("players/{ID_DU_JOUEUR}.json")
-    fun editmyPlayer(@Path("ID_DU_JOUEUR") ID_DU_VOYAGE:String,@Body Player:Player):Player
+    suspend fun editmyPlayer(@Path("ID_DU_JOUEUR") ID_DU_VOYAGE:String,@Body Player:Player):Player
 
 }

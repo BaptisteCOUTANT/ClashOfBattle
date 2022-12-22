@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.clashofbattle.models.Capability
 
-
+/*
 class SelectCapabilityAdapter(private val clickListener: (Capability) -> Unit) :
     ListAdapter<Capability, CapabilityViewHolder>(CapabilityDiffCallback()) {
 
@@ -25,12 +25,12 @@ class CapabilityViewHolder private constructor(private val binding: ViewCapabili
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(clickListener: (Capability) -> Unit, item: Capability) {
-        binding.capabilityName.setText(item.getNameId())
+       /* binding.capabilityName.setText(item.getNameId())
         binding.capabilityDescription.setText(item.getDescriptionId())
         binding.capabilityName.setTextColor(item.getColor(binding.root.context))
         binding.root.setOnClickListener {
             clickListener(item)
-        }
+        }*/
     }
 
     companion object {
@@ -54,4 +54,4 @@ class CapabilityDiffCallback : DiffUtil.ItemCallback<Capability>() {
     override fun areContentsTheSame(oldItem: Capability, newItem: Capability): Boolean {
         return oldItem == newItem
     }
-}
+}*/

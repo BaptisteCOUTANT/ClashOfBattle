@@ -21,6 +21,9 @@ interface PlayerDao {
     @Insert
     fun insert(player:Player)
 
+    @Query("SELECT * FROM Player WHERE remoteId= :remoteId")
+    fun getByRemoteId(remoteId: String): Player
+
     @Query("SELECT * FROM Player WHERE id= :id")
     operator fun get(id: Long) : Player
 

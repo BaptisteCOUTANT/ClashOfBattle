@@ -21,12 +21,14 @@ data class Player(
     val capability2: Capability,
     val capability3: Capability,
 ) {
+
     val capabilities : List<Capability>
         get() = listOf(
             capability1,
             capability2,
             capability3
         )
+
 }
 
 enum class Capability(val type: CapabilityType) {

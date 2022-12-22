@@ -1,5 +1,5 @@
 package com.example.clashofbattle.capabilities
-
+/*
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -52,4 +52,4 @@ class SelectCapabilityFragment : Fragment() {
         super.onDestroy()
         binding = null
     }
-}
+}*/

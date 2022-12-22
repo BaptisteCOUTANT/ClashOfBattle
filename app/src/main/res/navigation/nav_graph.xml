@@ -8,21 +8,36 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.clashofbattle.ListeJoueur"
-        android:label="@string/first_fragment_label"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_liste_joueur">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_editPlayerFragment"
+            app:destination="@id/editPlayerFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.clashofbattle.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_second">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/editPlayerFragment"
+        android:name="com.example.clashofbattle.EditPlayerFragment"
+        android:label="EditPlayerFragment" >
+        <action
+            android:id="@+id/action_editPlayerFragment_to_selectCapabilityActivity"
+            app:destination="@id/selectCapabilityActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/selectCapabilityActivity"
+        android:name="com.example.clashofbattle.capabilities.SelectCapabilityActivity"
+        android:label="SelectCapabilityActivity" />
 </navigation>
