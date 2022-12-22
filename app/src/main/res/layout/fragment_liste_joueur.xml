@@ -8,18 +8,18 @@
     android:orientation="horizontal"
     tools:context=".ListeJoueur">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:orientation="horizontal"
-        app:cardCornerRadius="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rv_joueurs">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -80,13 +80,18 @@
 
     </androidx.cardview.widget.CardView>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_joueurs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card"
+            app:layout_constraintVertical_bias="0.0">
+        </androidx.recyclerview.widget.RecyclerView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_trips"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
-    </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
