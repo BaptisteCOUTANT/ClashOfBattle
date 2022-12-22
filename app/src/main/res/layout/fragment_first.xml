@@ -16,14 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test"
-        >
-
-    </TextView>
-
     <Button
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
