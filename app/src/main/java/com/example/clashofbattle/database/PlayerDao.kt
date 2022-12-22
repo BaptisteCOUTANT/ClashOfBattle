@@ -1,15 +1,23 @@
 package com.example.clashofbattle.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.example.clashofbattle.models.Player
 
 @Dao
 interface PlayerDao {
+    @Insert
+    suspend fun insertAll(players: List<Player>)
+
+    @Query("DELETE FROM Player")
+    suspend fun clear()
+
+    @Transaction
+    suspend fun replace(players: List<Player>) {
+        clear()
+        insertAll(players)
+    }
+
     @Insert
     fun insert(player:Player)
 
@@ -20,7 +28,7 @@ interface PlayerDao {
     fun getAll():List<Player>
 
     @Query("SELECT * FROM Player ORDER BY name")
-    fun get():LiveData<List<Player?>>
+    fun getAlls():LiveData<List<Player?>>
 
     @Update
     fun update(player: Player)
