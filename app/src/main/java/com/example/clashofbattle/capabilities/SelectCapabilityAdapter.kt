@@ -1,13 +1,17 @@
 package com.example.clashofbattle.capabilities
 
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.clashofbattle.databinding.ViewCapabilityBinding
 import com.example.clashofbattle.models.Capability
+import com.example.clashofbattle.utils.getColor
+import com.example.clashofbattle.utils.getDescriptionId
+import com.example.clashofbattle.utils.getNameId
 
-/*
 class SelectCapabilityAdapter(private val clickListener: (Capability) -> Unit) :
     ListAdapter<Capability, CapabilityViewHolder>(CapabilityDiffCallback()) {
 
@@ -22,15 +26,15 @@ class SelectCapabilityAdapter(private val clickListener: (Capability) -> Unit) :
 
 
 class CapabilityViewHolder private constructor(private val binding: ViewCapabilityBinding) :
-    RecyclerView.ViewHolder(binding.root) {
+    ViewHolder(binding.root) {
 
     fun bind(clickListener: (Capability) -> Unit, item: Capability) {
-       /* binding.capabilityName.setText(item.getNameId())
+        binding.capabilityName.setText(item.getNameId())
         binding.capabilityDescription.setText(item.getDescriptionId())
         binding.capabilityName.setTextColor(item.getColor(binding.root.context))
         binding.root.setOnClickListener {
             clickListener(item)
-        }*/
+        }
     }
 
     companion object {
@@ -54,4 +58,4 @@ class CapabilityDiffCallback : DiffUtil.ItemCallback<Capability>() {
     override fun areContentsTheSame(oldItem: Capability, newItem: Capability): Boolean {
         return oldItem == newItem
     }
-}*/
+}

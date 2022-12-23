@@ -8,6 +8,8 @@ import com.example.clashofbattle.databinding.FragmentHorizontalListeJoueurBindin
 import com.example.clashofbattle.models.Capability
 import com.example.clashofbattle.models.CapabilityType
 import com.example.clashofbattle.models.Player
+import com.example.clashofbattle.utils.getColor
+import com.example.clashofbattle.utils.getNameId
 import com.example.clashofbattle.utils.getPlayerJob
 import com.example.clashofbattle.utils.loadImage
 
@@ -26,7 +28,9 @@ class PlayerViewHolder private constructor(var binding : FragmentHorizontalListe
     fun bind(clickListener: (Long) -> Unit, item: Player) {
         binding.nomjoueur.text=item.name
         loadImage(binding.imagejoueur,item.imageUrl)
-        binding.classejoueur.text= getPlayerJob(player = item).name
+        binding.classejoueur.setText(getPlayerJob(player = item).getNameId())
+        binding.classejoueur.setTextColor(getPlayerJob(item!!).getColor(itemView.context))
+
         binding.root.setOnClickListener{clickListener(item.id)}
     }
 

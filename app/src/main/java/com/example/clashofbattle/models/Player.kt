@@ -13,7 +13,7 @@ data class Player(
     @Json(ignore = true)
     val remoteId: String? = null,
 
-    val name: String,
+    var name: String,
     @Json(name = "image_url")
     val imageUrl: String,
 

@@ -13,6 +13,8 @@ import com.example.clashofbattle.database.AppDatabase
 import com.example.clashofbattle.database.ListPlayersAdapter
 import com.example.clashofbattle.databinding.FragmentListeJoueurBinding
 import com.example.clashofbattle.models.Player
+import com.example.clashofbattle.utils.getColor
+import com.example.clashofbattle.utils.getNameId
 import com.example.clashofbattle.utils.getPlayerJob
 import com.example.clashofbattle.utils.loadImage
 import com.example.clashofbattle.viewmodel.ClashOfBattleViewModel
@@ -53,11 +55,14 @@ class ListeJoueur : Fragment() {
        }
 
         player=AppDatabase.INSTANCE?.playerDao()?.getByRemoteId("Louis")
-        player?.imageUrl?.let { loadImage(binding.imagejoueurconnecte, it) }
-        binding.nomjoueurconnecte.text=player?.name
-        binding.classejoueurconnecte.text= player?.let { getPlayerJob(it).name }
-        binding.rvJoueurs.adapter=adapter
-        viewModel.daoPlayers?.observe(viewLifecycleOwner){adapter.submitList(it.toList())}
+        if(player!=null) {
+            player?.imageUrl?.let { loadImage(binding.imagejoueurconnecte, it) }
+            binding.nomjoueurconnecte.text = player?.name
+            binding.classejoueurconnecte.setText(getPlayerJob(player = player!!).getNameId())
+            binding.classejoueurconnecte.setTextColor(getPlayerJob(player!!).getColor(requireContext()))
+            binding.rvJoueurs.adapter = adapter
+            viewModel.daoPlayers?.observe(viewLifecycleOwner) { adapter.submitList(it.toList()) }
+        }
     }
 
     override fun onDestroyView() {

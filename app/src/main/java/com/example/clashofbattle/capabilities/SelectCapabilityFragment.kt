@@ -1,14 +1,14 @@
 package com.example.clashofbattle.capabilities
-/*
+
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.example.clashofbattle.databinding.FragmentSelectCapabilityBinding
 import com.example.clashofbattle.models.Capability
-
 
 class SelectCapabilityFragment : Fragment() {
 
@@ -52,4 +52,4 @@ class SelectCapabilityFragment : Fragment() {
         super.onDestroy()
         binding = null
     }
-}*/
+}

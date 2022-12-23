@@ -9,7 +9,7 @@ import com.example.clashofbattle.models.Capability
 
 class SelectCapabilityActivity : AppCompatActivity() {
 
- /*   companion object {
+    companion object {
         fun newIntent(context: Context, index: Int) =
             Intent(context, SelectCapabilityActivity::class.java).apply {
                 putExtra(SelectCapabilityFragment.CAPABILITY_INDEX_EXTRA, index)
@@ -31,6 +31,5 @@ class SelectCapabilityActivity : AppCompatActivity() {
                 .replace(R.id.container, SelectCapabilityFragment())
                 .commitNow()
         }
-    }*/
-
+    }
 }
